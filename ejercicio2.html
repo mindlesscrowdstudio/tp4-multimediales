@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Ejercicio TP4</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header id="header">
+      <nav>
+        <h1><a href="index.html">m<span>|</span>c</a></h1>
+        <ul>
+          <li><a href="ejercicio2.html">01</a> </li>
+          <li><a href="ejercicio3.html">02</a> </li>
+          <li><a href="ejercicio4.html">03</a> </li>
+        </ul>
+      </nav>  
+  </header><!-- /header -->
+  <section>
+    <h2 class="title">Hacer un programa que pida 2 números al usuario. Si el primer número
+    ingresado es par el programa deberá calcular el producto de ambos; en caso
+    contrario, deberá calcular la suma. Escribir el resultado en la página indicando
+    qué operación se realizó. Si uno de los dos datos ingresados no es un número, el
+    programa no debe realizar ningún cálculo y debe escribir en la página un
+    mensaje de error
+    </h2>
+  </section>
+  <div class="wrapper">
+    <p id="output" class="alert"></p>
+
+  </div>
+
+  <script>
+
+  var num1 = Number(prompt('ingresa un numero'));
+  var num2 = Number(prompt('ingresa un numero'));
+  var resultado;
+  var output = document.getElementById("output");
+
+  function problem1 () {    
+    if( (isNaN (num1)) || num1 == "" ) {
+        console.log( num1 ,'no es un numero');
+      output.innerText = "El primer valor que ingresaste no es un número. ingresa un número por favor";
+      output.style.color = '#D11D2C';
+      console.log(output);
+
+    } else if (isNaN (num2) || num2 == "") {
+      console.log( num2 ,'no es un numero');
+      output.innerText = "El segundo valor que ingresaste no es un número. ingresa un número por favor";
+      output.style.color = '#D11D2C';
+
+    }
+
+     else {
+      numeParImpar();
+    }
+
+  }
+  
+  
+  function numeParImpar() {
+     if (num1 % 2 == 0) {
+    resultado = num1 * num2;
+    output.innerText = "se realizó una multiplicacion y el resultado es: " +resultado;
+    } else {
+    //console.log('soy impar');
+    resultado = num1 + num2;
+    output.innerText = "se realizó una suma y el resultado es: " +resultado;
+    }
+  }
+problem1();
+ 
+
+  </script>
+
+</body>
+</html>
